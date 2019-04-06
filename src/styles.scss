@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+
+body{
+    font-family: roboto;
+}
+.container1{
+    margin-top: 100px;
+    padding: 30px;
+}
+
+.header-style, .header-style-home {
+    font-family: 'Pirata One', Roboto, cursive !important; 
+    color:#900 !important;
+}
+
+.header-style-home {
+    font-size: 27px ;text-shadow: black 0px 2px !important;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.recent {
+    margin-top: 100px;
+    }
+
+ul > li > a.nav-link {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+ul > li > a.nav-link:hover {
+    background: #600;
+    // box-shadow: 1px 1px 1px;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+div.card-body{
+    margin-bottom: 1px;
+    font-size: 14px;
+}

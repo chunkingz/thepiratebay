@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand header-style-home" routerLink="/">
+    thePirateBay Search
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+
+    <ul class="navbar-nav mr-auto mx-auto">
+      
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/recent">Recent Torrents</a>
+      </li>
+
+      <li ngbDropdown class="nav-item dropdown">
+        <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Top Torrents
+        </a>
+        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fas fa-globe-asia" style="color: blue;"></i> All</a>
+          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fas fa-music" style="color: brown;"></i> Audio</a>
+          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fas fa-video" style="color: fuchsia;"></i> Video</a>
+          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fas fa-ghost" style="color: rgb(241, 76, 76);"></i> Applications</a>
+          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fas fa-gamepad" style="color: blueviolet;"></i> Games</a>
+          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fas fa-venus-mars" style="color: palevioletred;"></i> 18+</a>
+          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fab fa-medapps" style="color: green;"></i> Other</a>
+        </div>
+      </li>
+
+      <li ngbDropdown class="nav-item dropdown">
+        <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Top 48hours Torrents
+        </a>
+        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fas fa-globe-asia" style="color: blue;"></i> All</a>
+          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fas fa-music" style="color: brown;"></i> Audio</a>
+          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fas fa-video" style="color: fuchsia;"></i> Video</a>
+          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fas fa-ghost" style="color: rgb(241, 76, 76);"></i> Applications</a>
+          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fas fa-gamepad" style="color: blueviolet;"></i> Games</a>
+          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fas fa-venus-mars" style="color: palevioletred;"></i> 18+</a>
+          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fab fa-medapps" style="color: green;"></i> Other</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/about">About</a>
+      </li>
+
+    </ul>
+
+    <form class="form-inline my-2 my-lg-0">
+      <input #searchKeyword class="form-control mr-sm-2" id="searchbox" name="searchTerm" type="text" placeholder="Search torrents..." aria-label="Search">
+      <button class="btn my-2 my-sm-0" style="background-color:#900;color:white;" type="submit">Search</button>
+    </form>
+
+  </div>
+</nav>

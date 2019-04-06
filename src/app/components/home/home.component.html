@@ -1,0 +1,76 @@
+<main role="main">
+
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple">
+  <p class="text-center" style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+    
+
+  <section class="jumbotron text-center">
+    <div class="container">
+      <img src="../../../assets/tpb-2.png" alt="tpb">
+      <!-- <h1 style="font-family: 'Pirata One', cursive; color:rgb(233, 103, 103);" class="jumbotron-heading">Welcome to Pirate Search...</h1> -->
+      <h1></h1>
+      <small class="text-muted">Worlds number 1 Torrent search Engine</small>
+
+      <form>
+        <div class="form-group">
+          <br><br>
+          <input #searchKeyword class="form-control col-lg-10 mx-auto" id="searchbox" (keyup)="search()"
+            name="searchTerm" [(ngModel)]="searchTerm" type="text" placeholder="Search torrents...">
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+
+        <div *ngIf="searchKeyword">
+          <div *ngFor="let searchResponse of searchTorrents">
+
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="90" xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Torrent">
+                  <rect width="100%" height="100%" fill="#55595c" />
+                </svg>
+                <div class="card-body">
+                  <p> <i class="fas fa-skull-crossbones" style="color: brown;"></i> <b> Title: </b>
+                    {{searchResponse.title}}</p>
+                  <p> <i class="fas fa-folder-open" style="color: #845ef7;"></i> <b> Category:</b>
+                    {{searchResponse.category}}</p>
+                  <p> <i class="fas fa-balance-scale text-info"></i> <b> Size:</b> {{searchResponse.size }} GB</p>
+                  <p> <i class="fas fa-arrow-up text-success"></i> <b> Seeders:</b> {{searchResponse.seeds}}</p>
+                  <p> <i class="fas fa-arrow-down text-danger"></i> <b> Leechers:</b> {{searchResponse.leeches}}</p>
+                  <p> <i class="fas fa-user text-primary"></i> <b> Uploader:</b> {{searchResponse.uploader}}</p>
+
+                  <div class="d-flex justify-content-between align-items-center">
+                    <button type="button" class="btn btn-md btn-outline-primary"><i
+                        class="fas fa-magnet fa-rotate-180"></i> Copy Magnet Link</button>
+                    <small class="text-muted">Uploaded at: {{searchResponse.time}}</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+</main>
+
+
+<app-footer></app-footer>
