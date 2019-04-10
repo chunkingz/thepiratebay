@@ -29,6 +29,7 @@ url = `https://tpbc.herokuapp.com`;
   }
 
   search(searchKeyword) {
+    
     const trimmedString = searchKeyword.trim().length;
     if (trimmedString > 0) {
       const torrentUrl = `${this.url}/search/${searchKeyword}`;

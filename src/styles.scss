@@ -1,5 +1,6 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~font-awesome/css/font-awesome.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 body{
     font-family: roboto;
@@ -43,4 +44,10 @@ ul > li > a.nav-link:hover {
 div.card-body{
     margin-bottom: 1px;
     font-size: 14px;
+}
+
+div.card-body:hover {
+    box-shadow: 20px 8px 16px 10px rgba(0,0,0,0.2);
+    transition: 0.5s;
+    border-radius: 5px;
 }

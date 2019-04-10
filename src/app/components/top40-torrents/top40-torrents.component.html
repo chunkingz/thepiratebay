@@ -1,0 +1,91 @@
+<main role="main">
+
+    <ngx-spinner
+      bdColor="rgba(51,51,51,0.8)"
+      size="medium"
+      color="#fff"
+      type="ball-scale-multiple">
+      <p class="text-center" style="font-size: 20px; color: white">Loading Top 48hours Torrents...</p>
+    </ngx-spinner>
+
+    <h1 class="jumbotron-heading text-center recent header-style">
+        Top 48 hours Torrents
+      </h1>
+    
+    
+      <div class="album py-5 bg-light">
+        <div class="container">
+
+    <!-- alert to show if copy magnet button is clicked -->
+    <!-- <ngb-alert *ngIf="successMessage" type="success" (close)="successMessage = null">{{ successMessage }}</ngb-alert> -->
+    
+    
+          <div>
+    
+            <div *ngIf="top48Torrents">
+              <div *ngFor="let topTorrentsResult of top48Torrents">
+    
+                <div class="col-md-4 pull-left">
+                  <div class="card mb-4 shadow-sm" style="max-height:350px;">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="90" xmlns="http://www.w3.org/2000/svg"
+                      preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Torrent">
+                      <rect width="100%" height="100%" fill="#55595c" />
+                    </svg>
+    
+                    <div class="card-body">
+    
+                      <p> <i class="fas fa-skull-crossbones" style="color: brown;"></i> <b> Title: </b>
+                        {{topTorrentsResult.title}}</p>
+    
+                      <p> <i class="fas fa-folder-open" style="color: #845ef7;"></i> <b> Category:</b>
+                        {{topTorrentsResult.category}}</p>
+    
+                      <p> <i class="fas fa-balance-scale text-info"></i> <b> Size:</b> {{topTorrentsResult.size | convert }}</p>
+                      
+                      <p> <i class="fas fa-arrow-up text-success"></i> <b> Seeders:</b> {{topTorrentsResult.seeds}}</p>
+                      
+                      <p> <i class="fas fa-arrow-down text-danger"></i> <b> Leechers:</b> {{topTorrentsResult.leeches}}</p>
+                      
+                      <p> <i class="fas fa-user text-primary"></i> <b> Uploader:</b> {{topTorrentsResult.uploader}}</p>
+    
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div>
+    
+                        <a href="{{topTorrentsResult.magnet | stripunsafe}}" class="btn btn-sm btn-outline-primary"  title="Copy Torrent Magnet Link"
+                          ngxClipboard [cbContent]="topTorrentsResult.magnet" 
+                          (click)="changeSuccessMessage()">
+                            <i class="fas fa-magnet fa-rotate-180"></i>
+                            Copy Magnet Link
+                        </a>
+                        </div>
+    
+                        <small class="text-muted">Uploaded: {{topTorrentsResult.time | convertDateTime}}</small>
+    
+                      </div>
+    
+                    </div>
+    
+                  </div>
+                </div>
+              </div>
+    
+            </div>
+          </div>
+    
+    
+    
+        </div>
+      </div>
+    
+    
+    </main>
+    
+    <br><br>
+    
+    <!-- <app-footer></app-footer> -->
+
+  <div *ngIf="badRoute">
+
+      <app-notfound></app-notfound>
+      
+  </div>

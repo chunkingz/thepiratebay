@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <a class="navbar-brand header-style-home" routerLink="/">
     thePirateBay Search
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -19,13 +19,13 @@
           Top Torrents
         </a>
         <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
-          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fas fa-globe-asia" style="color: blue;"></i> All</a>
-          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fas fa-music" style="color: brown;"></i> Audio</a>
-          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fas fa-video" style="color: fuchsia;"></i> Video</a>
-          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fas fa-ghost" style="color: rgb(241, 76, 76);"></i> Applications</a>
-          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fas fa-gamepad" style="color: blueviolet;"></i> Games</a>
-          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fas fa-venus-mars" style="color: palevioletred;"></i> 18+</a>
-          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fab fa-medapps" style="color: green;"></i> Other</a>
+          <a ngbDropdownItem class="dropdown-item" routerLink="top-torrents/all"><i class="fas fa-globe-asia" style="color: blue;"></i> All</a>
+          <a ngbDropdownItem class="dropdown-item" routerLink="top-torrents/audio"><i class="fas fa-music" style="color: brown;"></i> Audio</a>
+          <a ngbDropdownItem class="dropdown-item" routerLink="top-torrents/video"><i class="fas fa-video" style="color: fuchsia;"></i> Video</a>
+          <a ngbDropdownItem class="dropdown-item" routerLink="top-torrents/applications"><i class="fas fa-ghost" style="color: rgb(241, 76, 76);"></i> Applications</a>
+          <a ngbDropdownItem class="dropdown-item" routerLink="top-torrents/games"><i class="fas fa-gamepad" style="color: blueviolet;"></i> Games</a>
+          <a ngbDropdownItem class="dropdown-item" routerLink="top-torrents/18+"><i class="fas fa-venus-mars" style="color: palevioletred;"></i> 18+</a>
+          <a ngbDropdownItem class="dropdown-item" routerLink="top-torrents/other"><i class="fab fa-medapps" style="color: green;"></i> Other</a>
         </div>
       </li>
 
@@ -34,13 +34,13 @@
           Top 48hours Torrents
         </a>
         <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
-          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fas fa-globe-asia" style="color: blue;"></i> All</a>
-          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fas fa-music" style="color: brown;"></i> Audio</a>
-          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fas fa-video" style="color: fuchsia;"></i> Video</a>
-          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fas fa-ghost" style="color: rgb(241, 76, 76);"></i> Applications</a>
-          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fas fa-gamepad" style="color: blueviolet;"></i> Games</a>
-          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fas fa-venus-mars" style="color: palevioletred;"></i> 18+</a>
-          <a ngbDropdownItem class="dropdown-item" routerLink="#"><i class="fab fa-medapps" style="color: green;"></i> Other</a>
+          <a ngbDropdownItem class="dropdown-item" routerLink="top-48hours-torrents/all"><i class="fas fa-globe-asia" style="color: blue;"></i> All</a>
+          <a ngbDropdownItem class="dropdown-item" routerLink="top-48hours-torrents/audio"><i class="fas fa-music" style="color: brown;"></i> Audio</a>
+          <a ngbDropdownItem class="dropdown-item" routerLink="top-48hours-torrents/video"><i class="fas fa-video" style="color: fuchsia;"></i> Video</a>
+          <a ngbDropdownItem class="dropdown-item" routerLink="top-48hours-torrents/applications"><i class="fas fa-ghost" style="color: rgb(241, 76, 76);"></i> Applications</a>
+          <a ngbDropdownItem class="dropdown-item" routerLink="top-48hours-torrents/games"><i class="fas fa-gamepad" style="color: blueviolet;"></i> Games</a>
+          <a ngbDropdownItem class="dropdown-item" routerLink="top-48hours-torrents/18+"><i class="fas fa-venus-mars" style="color: palevioletred;"></i> 18+</a>
+          <a ngbDropdownItem class="dropdown-item" routerLink="top-48hours-torrents/other"><i class="fab fa-medapps" style="color: green;"></i> Other</a>
         </div>
       </li>
 
@@ -51,7 +51,10 @@
     </ul>
 
     <form class="form-inline my-2 my-lg-0">
-      <input #searchKeyword class="form-control mr-sm-2" id="searchbox" name="searchTerm" type="text" placeholder="Search torrents..." aria-label="Search">
+
+      <input #searchKeyword class="form-control mr-sm-2" id="searchbox" name="searchTerm" 
+      type="text" placeholder="Search torrents..." aria-label="Search">
+
       <button class="btn my-2 my-sm-0" style="background-color:#900;color:white;" type="submit">Search</button>
     </form>
 

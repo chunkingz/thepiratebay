@@ -5,88 +5,73 @@
   size="medium"
   color="#fff"
   type="ball-scale-multiple">
-  <p class="text-center" style="font-size: 20px; color: white">Loading...</p>
+  <p class="text-center" style="font-size: 20px; color: white">Loading Recent Torrents...</p>
 </ngx-spinner>
 
     <h1 class="jumbotron-heading text-center recent header-style">
       Recent Torrents
     </h1>
+
+    <!-- alert to show if copy magnet button is clicked -->
+    <!-- <ngb-alert *ngIf="successMessage" type="success" (close)="successMessage = null">{{ successMessage }}</ngb-alert> -->
   
     <div class="album py-5 bg-light">
       <div class="container">
   
-        <div class="row">
+        <div>
+          
+        <div *ngIf="torrents">
+            <div *ngFor="let recentTorrents of torrents">
 
-            <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="90" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Torrent">
-                    <title>Title</title>
-                    <rect width="100%" height="100%" fill="#55595c"/>
-                  </svg>
-                  <div class="card-body">
-                    <p> <i class="fas fa-skull-crossbones" style="color: brown;"></i> <b> Title: </b> Escape.Room.2019.V2.HC.HDRip.XviD.AC3-EVO</p>
-                    <p> <i class="fas fa-folder-open" style="color: #845ef7;"></i> <b> Category:</b> Video</p>
-                    <p> <i class="fas fa-balance-scale text-info"></i> <b> Size:</b> 1.56 GB</p>
-                    <p> <i class="fas fa-arrow-up text-success"></i> <b> Seeders:</b> 0</p>
-                    <p> <i class="fas fa-arrow-down text-danger"></i> <b> Leechers:</b> 0</p>
-                    <p> <i class="fas fa-user text-primary"></i> <b> Uploader:</b> TvTeam</p>
-                    
-                    <div class="d-flex justify-content-between align-items-center">
-                      <button type="button" class="btn btn-md btn-outline-primary"><i class="fas fa-magnet fa-rotate-180"></i> Copy Magnet Link</button>
-                      <small class="text-muted">Uploaded at: 9 mins</small>
+                <div class="col-md-4 pull-left">
+                    <div class="card mb-4 shadow-sm" style="max-height:390px;">
+                      <svg class="bd-placeholder-img card-img-top" width="100%" height="90" xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Torrent">
+                        <rect width="100%" height="100%" fill="#55595c" />
+                      </svg>
+      
+                      <div class="card-body">
+      
+                        <p> <i class="fas fa-skull-crossbones" style="color: brown;"></i> <b> Title: </b>
+                          {{recentTorrents.title}}</p>
+      
+                        <p> <i class="fas fa-folder-open" style="color: #845ef7;"></i> <b> Category:</b>
+                          {{recentTorrents.category}}</p>
+      
+                        <p> <i class="fas fa-balance-scale text-info"></i> <b> Size:</b> {{recentTorrents.size | convert }}</p>
+                        
+                        <p> <i class="fas fa-arrow-up text-success"></i> <b> Seeders:</b> {{recentTorrents.seeds}}</p>
+                        
+                        <p> <i class="fas fa-arrow-down text-danger"></i> <b> Leechers:</b> {{recentTorrents.leeches}}</p>
+                        
+                        <p> <i class="fas fa-user text-primary"></i> <b> Uploader:</b> {{recentTorrents.uploader}}</p>
+      
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div>
+      
+                          <a href="{{recentTorrents.magnet | stripunsafe}}" class="btn btn-sm btn-outline-primary"  title="Copy Torrent Magnet Link"
+                            ngxClipboard [cbContent]="recentTorrents.magnet" 
+                            (click)="changeSuccessMessage()">
+                              <i class="fas fa-magnet fa-rotate-180"></i>
+                              Copy Magnet Link
+                          </a>
+                          </div>
+      
+                          <small class="text-muted">Uploaded: {{recentTorrents.time | convertDateTime}}</small>
+      
+                        </div>
+      
+                      </div>
+      
                     </div>
                   </div>
-                </div>
-              </div>
-            <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="90" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Torrent">
-                    <title>Title</title>
-                    <rect width="100%" height="100%" fill="#55595c"/>
-                  </svg>
-                  <div class="card-body">
-                    <p> <i class="fas fa-skull-crossbones" style="color: brown;"></i> <b> Title: </b> Escape.Room.2019.V2.HC.HDRip.XviD.AC3-EVO</p>
-                    <p> <i class="fas fa-folder-open" style="color: #845ef7;"></i> <b> Category:</b> Video</p>
-                    <p> <i class="fas fa-balance-scale text-info"></i> <b> Size:</b> 1.56 GB</p>
-                    <p> <i class="fas fa-arrow-up text-success"></i> <b> Seeders:</b> 0</p>
-                    <p> <i class="fas fa-arrow-down text-danger"></i> <b> Leechers:</b> 0</p>
-                    <p> <i class="fas fa-user text-primary"></i> <b> Uploader:</b> TvTeam</p>
-                    
-                    <div class="d-flex justify-content-between align-items-center">
-                      <button type="button" class="btn btn-md btn-outline-primary"><i class="fas fa-magnet fa-rotate-180"></i> Copy Magnet Link</button>
-                      <small class="text-muted">Uploaded at: 9 mins</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="90" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Torrent">
-                    <title>Title</title>
-                    <rect width="100%" height="100%" fill="#55595c"/>
-                  </svg>
-                  <div class="card-body">
-                    <p> <i class="fas fa-skull-crossbones" style="color: brown;"></i> <b> Title: </b> Escape.Room.2019.V2.HC.HDRip.XviD.AC3-EVO</p>
-                    <p> <i class="fas fa-folder-open" style="color: #845ef7;"></i> <b> Category:</b> Video</p>
-                    <p> <i class="fas fa-balance-scale text-info"></i> <b> Size:</b> 1.56 GB</p>
-                    <p> <i class="fas fa-arrow-up text-success"></i> <b> Seeders:</b> 0</p>
-                    <p> <i class="fas fa-arrow-down text-danger"></i> <b> Leechers:</b> 0</p>
-                    <p> <i class="fas fa-user text-primary"></i> <b> Uploader:</b> TvTeam</p>
-                    
-                    <div class="d-flex justify-content-between align-items-center">
-                      <button type="button" class="btn btn-md btn-outline-primary"><i class="fas fa-magnet fa-rotate-180"></i> Copy Magnet Link</button>
-                      <small class="text-muted">Uploaded at: 9 mins</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
 
         </div>
+      </div>
+      </div>
       </div>
     </div>
   
   </main>
   
-  <app-footer></app-footer>
+  <!-- <app-footer></app-footer> -->
