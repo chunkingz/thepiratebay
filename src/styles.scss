@@ -5,9 +5,19 @@
 body{
     font-family: roboto;
 }
-.container1{
-    margin-top: 100px;
-    padding: 30px;
+
+@media only screen and (max-width: 991px) {
+    .container1{
+        margin-top: 100px;
+        // padding: 30px;
+    }
+  }
+
+@media only screen and (max-width: 768px) {
+    .container1{
+        margin-top: 50px;
+        // padding: 30px;
+    }
 }
 
 .header-style, .header-style-home {

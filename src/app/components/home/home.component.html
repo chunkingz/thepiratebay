@@ -9,7 +9,7 @@
 </ngx-spinner>
 
 
-  <section class="jumbotron text-center">
+  <section class="jumbotron text-center container1">
 
     <div class="container" *ngIf="searchKeyword.value.length <= 0" >
       <img src="../../../assets/tpb-2.png" alt="tpb">
@@ -21,7 +21,7 @@
     <form>
       <div class="form-group">
         <br><br>
-        <input #searchKeyword class="form-control col-lg-10 mx-auto" id="searchbox" (keyup)="search()"
+        <input #searchKeyword class="form-control col-lg-8 mx-auto" id="searchbox" (keyup)="search()"
           name="searchTerm" [(ngModel)]="searchTerm" type="text" placeholder="Search torrents...">
       </div>
     </form>

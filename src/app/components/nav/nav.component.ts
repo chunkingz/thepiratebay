@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 
 export class NavComponent {
 
+  isCollapsed = true;
+
+  collapse() {
+    this.isCollapsed = true;
+  }
 }

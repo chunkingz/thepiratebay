@@ -1,24 +1,24 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <a class="navbar-brand header-style-home" routerLink="/">
+  <a class="navbar-brand header-style-home" (click)="collapse()" routerLink="/">
     thePirateBay Search
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+  <button class="navbar-toggler" (click)="isCollapsed = !isCollapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarCollapse">
+  <div [ngbCollapse]="isCollapsed" class="collapse navbar-collapse" id="navbarCollapse">
 
     <ul class="navbar-nav mr-auto mx-auto">
       
       <li class="nav-item">
-        <a class="nav-link" routerLink="/recent">Recent Torrents</a>
+        <a class="nav-link" (click)="collapse()" routerLink="/recent">Recent Torrents</a>
       </li>
 
       <li ngbDropdown class="nav-item dropdown">
         <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Top Torrents
         </a>
-        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+        <div ngbDropdownMenu (click)="collapse()" class="dropdown-menu" aria-labelledby="dropdown01">
           <a ngbDropdownItem class="dropdown-item" routerLink="top-torrents/all"><i class="fas fa-globe-asia" style="color: blue;"></i> All</a>
           <a ngbDropdownItem class="dropdown-item" routerLink="top-torrents/audio"><i class="fas fa-music" style="color: brown;"></i> Audio</a>
           <a ngbDropdownItem class="dropdown-item" routerLink="top-torrents/video"><i class="fas fa-video" style="color: fuchsia;"></i> Video</a>
@@ -33,7 +33,7 @@
         <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Top 48hours Torrents
         </a>
-        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+        <div ngbDropdownMenu (click)="collapse()" class="dropdown-menu" aria-labelledby="dropdown01">
           <a ngbDropdownItem class="dropdown-item" routerLink="top-48hours-torrents/all"><i class="fas fa-globe-asia" style="color: blue;"></i> All</a>
           <a ngbDropdownItem class="dropdown-item" routerLink="top-48hours-torrents/audio"><i class="fas fa-music" style="color: brown;"></i> Audio</a>
           <a ngbDropdownItem class="dropdown-item" routerLink="top-48hours-torrents/video"><i class="fas fa-video" style="color: fuchsia;"></i> Video</a>
@@ -45,7 +45,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" routerLink="/about">About</a>
+        <a class="nav-link" (click)="collapse()" routerLink="/about">About</a>
       </li>
 
     </ul>
@@ -55,7 +55,7 @@
       <input #searchKeyword class="form-control mr-sm-2" id="searchbox" name="searchTerm" 
       type="text" placeholder="Search torrents..." aria-label="Search">
 
-      <button class="btn my-2 my-sm-0" style="background-color:#900;color:white;" type="submit">Search</button>
+      <button (click)="collapse()" class="btn my-2 my-sm-0" style="background-color:#900;color:white;" type="submit">Search</button>
     </form>
 
   </div>
