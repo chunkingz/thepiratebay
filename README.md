@@ -23,10 +23,10 @@
 
 # Project Management:
 
-This project is managed on Pivotal Tracker [here](https://www.pivotaltracker.com/n/projects/2326048)
+:briefcase: This project is managed on Pivotal Tracker [here](https://www.pivotaltracker.com/n/projects/2326048)
 
 ---
 
 # Contributors:
 
-- C'Dest
+- :bowtie: C'Dest
