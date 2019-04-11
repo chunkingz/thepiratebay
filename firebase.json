@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/thepiratebay/",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

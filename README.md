@@ -13,9 +13,13 @@
 - Created a more user friendly mobile view.
 - Upgraded to angular 7 and whole lot more!
 
-# Url: 
+# Urls (Hosting): 
 
-This project is hosted on Heroku [here](http://thepiratebay1.herokuapp.com/)
+:gem: This project is hosted on Heroku [here](http://thepiratebay1.herokuapp.com/)
+
+:fire: This project is also hosted on Firebase [here](https://thepiratebay1.firebaseapp.com/)
+
+:octocat: Github Pages coming soon...
 
 # Project Management:
 
