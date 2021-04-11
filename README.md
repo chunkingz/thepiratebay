@@ -3,6 +3,8 @@
 > Pirate Search was created to bypass ISP's ip blocking to access thepiratebay.org
 
 > Another huge bonus, it saves you from the hidden ads and malicious scripts running in the background.
+---
+
 
 # Implemented Features
 
@@ -12,6 +14,8 @@
 - Added a snackbar/toast message to notify the user when they copy the magnet link to the clipboard.
 - Created a more user friendly mobile view.
 - Upgraded to angular 7 and whole lot more!
+---
+
 
 # Urls (Hosting): 
 
@@ -21,11 +25,17 @@
 
 :octocat: Github Pages coming soon...
 
+:electric_plug: The API backend links: [Github Repo](https://github.com/appi147/thepiratebay), [API webpage](https://tpbc.herokuapp.com/)
+
+---
+
+
 # Project Management:
 
 :briefcase: This project is managed on Pivotal Tracker [here](https://www.pivotaltracker.com/n/projects/2326048)
 
 ---
+
 
 # Contributors:
 
