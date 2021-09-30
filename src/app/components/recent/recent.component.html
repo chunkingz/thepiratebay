@@ -20,7 +20,7 @@
   
         <div>
           
-        <div *ngIf="torrents">
+        <div *ngIf="torrents; else noData">
             <div *ngFor="let recentTorrents of torrents">
 
                 <div class="col-md-4 pull-left">
@@ -68,6 +68,12 @@
 
         </div>
       </div>
+
+      <ng-template #noData>
+        <h1>No Data to display</h1>
+        <p>The API might be broken, please check with the web developer <a href="https://github.com/chunkingz/thepiratebay/issues" target="_blank" rel="noopener noreferrer">here</a> </p>
+      </ng-template>
+      
       </div>
       </div>
     </div>

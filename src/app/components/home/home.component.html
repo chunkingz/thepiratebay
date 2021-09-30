@@ -1,28 +1,24 @@
 <main role="main">
 
-<ngx-spinner
-  bdColor="rgba(51,51,51,0.8)"
-  size="medium"
-  color="#fff"
-  type="ball-scale-multiple">
-  <p class="text-center" style="font-size: 20px; color: white">Loading...</p>
-</ngx-spinner>
+  <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+    <p class="text-center" style="font-size: 20px; color: white">Loading...</p>
+  </ngx-spinner>
 
 
   <section class="jumbotron text-center container1">
 
-    <div class="container" *ngIf="searchKeyword.value.length <= 0" >
+    <div class="container" *ngIf="searchKeyword.value.length <= 0">
       <img src="../../../assets/tpb-2.png" alt="tpb">
       <!-- <h1 style="font-family: 'Pirata One', cursive; color:rgb(233, 103, 103);" class="jumbotron-heading">Welcome to Pirate Search...</h1> -->
-      <h1></h1>
+      <br>
       <small class="text-muted">Worlds number 1 Torrent search Engine</small>
     </div>
 
     <form>
       <div class="form-group">
         <br><br>
-        <input #searchKeyword class="form-control col-lg-8 mx-auto" id="searchbox" (keyup)="search()"
-          name="searchTerm" [(ngModel)]="searchTerm" type="text" placeholder="Search torrents...">
+        <input #searchKeyword class="form-control col-lg-8 mx-auto" id="searchbox" (keyup)="search()" name="searchTerm"
+          [(ngModel)]="searchTerm" type="text" placeholder="Search torrents...">
       </div>
     </form>
 
@@ -34,10 +30,7 @@
 
   <div class="album py-5 bg-light">
     <div class="container">
-
-      <div>
-
-        <div *ngIf="searchKeyword.value.length > 0">
+      <div *ngIf="searchKeyword.value.length > 0 && searchTorrents; else noData">
           <div *ngFor="let searchResponse of searchTorrents">
 
             <div class="col-md-4 pull-left">
@@ -55,23 +48,24 @@
                   <p> <i class="fas fa-folder-open" style="color: #845ef7;"></i> <b> Category:</b>
                     {{searchResponse.category}}</p>
 
-                  <p> <i class="fas fa-balance-scale text-info"></i> <b> Size:</b> {{searchResponse.size | convert }}</p>
-                  
+                  <p> <i class="fas fa-balance-scale text-info"></i> <b> Size:</b> {{searchResponse.size | convert }}
+                  </p>
+
                   <p> <i class="fas fa-arrow-up text-success"></i> <b> Seeders:</b> {{searchResponse.seeds}}</p>
-                  
+
                   <p> <i class="fas fa-arrow-down text-danger"></i> <b> Leechers:</b> {{searchResponse.leeches}}</p>
-                  
+
                   <p> <i class="fas fa-user text-primary"></i> <b> Uploader:</b> {{searchResponse.uploader}}</p>
 
                   <div class="d-flex justify-content-between align-items-center">
                     <div>
 
-                    <a href="{{searchResponse.magnet | stripunsafe}}" class="btn btn-sm btn-outline-primary"  title="Copy Torrent Magnet Link"
-                      ngxClipboard [cbContent]="searchResponse.magnet" 
-                      (click)="changeSuccessMessage()">
+                      <a href="{{searchResponse.magnet | stripunsafe}}" class="btn btn-sm btn-outline-primary"
+                        title="Copy Torrent Magnet Link" ngxClipboard [cbContent]="searchResponse.magnet"
+                        (click)="changeSuccessMessage()">
                         <i class="fas fa-magnet fa-rotate-180"></i>
                         Copy Magnet Link
-                    </a>
+                      </a>
                     </div>
 
                     <small class="text-muted">Uploaded: {{searchResponse.time | convertDateTime}}</small>
@@ -84,8 +78,12 @@
             </div>
           </div>
 
-        </div>
       </div>
+
+      <ng-template #noData>
+        <h1>No Data to display</h1>
+        <p>The API might be broken, please check with the web developer <a href="https://github.com/chunkingz/thepiratebay/issues" target="_blank" rel="noopener noreferrer">here</a> </p>
+      </ng-template>
 
 
 

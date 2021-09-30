@@ -1,22 +1,20 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~font-awesome/css/font-awesome.css";
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap');
 
 body{
-    font-family: roboto;
+    font-family: 'Lato', sans-serif;
 }
 
 @media only screen and (max-width: 991px) {
     .container1{
         margin-top: 100px;
-        // padding: 30px;
     }
   }
 
 @media only screen and (max-width: 768px) {
     .container1{
         margin-top: 50px;
-        // padding: 30px;
     }
 }
 
@@ -45,7 +43,6 @@ ul > li > a.nav-link {
 
 ul > li > a.nav-link:hover {
     background: #600;
-    // box-shadow: 1px 1px 1px;
     color: white;
     padding: 10px;
     border-radius: 10px;

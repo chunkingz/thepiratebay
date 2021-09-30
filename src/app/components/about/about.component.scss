@@ -1,0 +1,9 @@
+section {
+    padding-top: 10rem;
+}
+
+@media only screen and (max-width: 768px) {
+    section{
+        padding-top: 5rem;
+    }
+  }

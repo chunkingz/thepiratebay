@@ -11,7 +11,7 @@ import {MatSnackBar} from '@angular/material';
 @Component({
   selector: 'app-top40-torrents',
   templateUrl: './top40-torrents.component.html',
-  styleUrls: ['./top40-torrents.component.sass']
+  styleUrls: ['./top40-torrents.component.scss']
 })
 export class Top40TorrentsComponent implements OnInit {
 

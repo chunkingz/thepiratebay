@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ITorrent } from './../../interfaces/itorrent';
 import { DataService } from '../../services/data.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import {Subject} from 'rxjs';
@@ -10,7 +9,7 @@ import {MatSnackBar} from '@angular/material';
 @Component({
   selector: 'app-recent',
   templateUrl: './recent.component.html',
-  styleUrls: ['./recent.component.sass'],
+  styleUrls: ['./recent.component.scss'],
   providers: [DataService]
 })
 export class RecentComponent implements OnInit {
@@ -26,10 +25,6 @@ export class RecentComponent implements OnInit {
 
   ngOnInit() {
     this.spinner.show();
- 
-    // setTimeout(() => {
-    //     this.spinner.hide();
-    // }, 1000);
 
     this.getTorrents();
 
@@ -66,7 +61,9 @@ export class RecentComponent implements OnInit {
           this.spinner.hide();
       }, 1000);
       
-        this.torrents = <ITorrent[]> response;
+        this.torrents = response;
+        if(this.torrents.length == 0) this.torrents = false;
+
       });
   }
 

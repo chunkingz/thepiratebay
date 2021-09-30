@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ITorrent } from './../../interfaces/itorrent';
 import { DataService } from '../../services/data.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import {Subject} from 'rxjs';
@@ -10,7 +9,7 @@ import {MatSnackBar} from '@angular/material';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.sass']
+  styleUrls: ['./home.component.scss']
 })
 
 export class HomeComponent implements OnInit {
@@ -70,7 +69,9 @@ export class HomeComponent implements OnInit {
       this._data.search(this.searchTerm)
       .subscribe(response => {
           
-        this.searchTorrents = <ITorrent[]> response;
+        this.searchTorrents = response;
+        if(this.searchTorrents.length == 0) this.searchTorrents = false;
+        
 
         setTimeout(() => {
           this.spinner.hide();
