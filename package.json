@@ -34,7 +34,7 @@
     "@ng-bootstrap/ng-bootstrap": "^4.1.1",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
-    "express": "^4.16.4",
+    "express": "^4.18.2",
     "font-awesome": "^4.7.0",
     "ng-connection-service": "^1.0.4",
     "ng2-go-top-button": "^7.1.0",
